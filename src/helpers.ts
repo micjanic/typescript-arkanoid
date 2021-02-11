@@ -5,6 +5,7 @@ import {
     LEVEL,
     STAGE_COLS,
     STAGE_PADDING,
+    BRICK_PADDING,
     BRICK_WIDTH,
     BRICK_HEIGHT,
     BRICK_ENERGY,

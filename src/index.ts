@@ -39,7 +39,12 @@ function gameLoop(
     bricks: Brick[]
     // paddle: Paddle,
     // ball: Ball
-) {}
+) {
+    view.clear()
+    view.drawBricks(bricks)
+
+    requestAnimationFrame(() => gameLoop(view, bricks))
+}
 
 function startGame(view: CanvasView) {
     //reset displays
