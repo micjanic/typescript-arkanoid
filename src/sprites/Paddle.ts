@@ -53,4 +53,22 @@ export class Paddle {
         if (this.moveLeft) this.pos.x -= this.speed
         if (this.moveRight) this.pos.x += this.speed
     }
+
+    handleKeyUp = (e: KeyboardEvent): void => {
+        if (e.code === 'ArrowLeft' || e.key === 'ArrowLeft') {
+            this.moveLeft = false
+        }
+        if (e.code === 'ArrowRight' || e.key === 'ArrowRight') {
+            this.moveRight = false
+        }
+    }
+
+    handleKeyDown = (e: KeyboardEvent): void => {
+        if (e.code === 'ArrowLeft' || e.key === 'ArrowLeft') {
+            this.moveLeft = true
+        }
+        if (e.code === 'ArrowRight' || e.key === 'ArrowRight') {
+            this.moveRight = true
+        }
+    }
 }
