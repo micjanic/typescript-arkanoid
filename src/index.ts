@@ -53,6 +53,17 @@ function startGame(view: CanvasView) {
     view.drawScore(0)
     //create all bricks
     const bricks = createBricks()
+    // Create a paddle
+    const paddle = new Paddle(
+        PADDLE_SPEED,
+        PADDLE_WIDTH,
+        PADDLE_HEIGHT,
+        {
+            x: PADDLE_STARTX,
+            y: view.canvas.height - PADDLE_HEIGHT - 5,
+        },
+        PADDLE_IMAGE
+    )
 
     gameLoop(view, bricks)
 }
