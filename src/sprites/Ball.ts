@@ -35,4 +35,17 @@ export class Ball {
     get image(): HTMLImageElement {
         return this.ballImage;
     }
+
+    changeYDirection(): void {
+        this.speed.y = -this.speed.y;
+    }
+
+    changeXDirection(): void {
+        this.speed.x = -this.speed.x;
+    }
+
+    moveBall(): void {
+        this.pos.x += this.speed.x;
+        this.pos.y += this.speed.y;
+    }
 }
