@@ -60,6 +60,24 @@ function gameLoop(
     }
 
     collision.checkBallCollision(ball, paddle, view)
+    const collidingBrick = collision.isCollidingBricks(ball, bricks)
+
+    if (collidingBrick) {
+        score += 1
+        view.drawScore(score)
+    }
+
+    // Game over when ball leaves playfield
+    if (ball.pos.y > view.canvas.height) {
+        gameOver = true
+    }
+    // if game won, set game over and display win
+    if (bricks.length === 0) {
+        return setGameWin(view)
+        //return game over and dont run the requestanimationframe
+    }
+
+    if (gameOver) return setGameOver(view)
 
     requestAnimationFrame(() => gameLoop(view, bricks, paddle, ball, collision))
 }
